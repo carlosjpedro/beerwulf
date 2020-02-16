@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Review.API.Dtos;
+using Review.API.Entities;
 using Review.API.Exceptions;
 using Review.API.Services;
-using Review.API.Services.Model;
 
 namespace Review.API.Controllers
 {

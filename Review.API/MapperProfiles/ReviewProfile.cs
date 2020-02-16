@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Review.API.Dtos;
-using Review.API.Services.Model;
+using Review.API.Entities;
 
 namespace Review.API.MapperProfiles
 {

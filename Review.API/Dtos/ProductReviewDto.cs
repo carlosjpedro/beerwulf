@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Review.API.Dtos
 {
@@ -38,15 +35,5 @@ namespace Review.API.Dtos
         /// </summary>
         [Required]
         public bool? Recommend { get; set; }
-    }
-
-    public class ProductReviewSummaryDto
-    {
-        
-        public int ProductId { get;set;}
-        
-        public decimal AvgScore { get; set;}
-        
-        public decimal Recommend { get; set;}
     }
 }

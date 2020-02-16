@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Review.API.Services.Model;
+using Review.API.Entities;
 
 namespace Review.API.Repositories
 {

@@ -7,8 +7,8 @@ using Moq;
 using Review.API.Controllers;
 using Review.API.Exceptions;
 using Review.API.Services;
-using Review.API.Services.Model;
 using Xunit;
+using Review.API.Entities;
 
 namespace Review.API.Tests
 {

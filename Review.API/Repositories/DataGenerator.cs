@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Review.API.Services.Model;
+using Review.API.Entities;
 
 namespace Review.API.Repositories
 {
@@ -19,8 +19,10 @@ namespace Review.API.Repositories
 
                 context.Products.AddRange(new[]
                 {
-                    new Product(1,"beer 1"),
-                    new Product(2, "another beer")
+                    new Product(1,"Delirium Tremens"),
+                    new Product(2, "Duvel"),
+                    new Product(3, "Super Bock"),
+                    new Product(4, "Guiness"),
                 });
                 context.SaveChanges();
             }

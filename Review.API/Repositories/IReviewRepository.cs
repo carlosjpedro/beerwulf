@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Review.API.Services.Model;
+using Review.API.Entities;
 
 namespace Review.API.Repositories
 {

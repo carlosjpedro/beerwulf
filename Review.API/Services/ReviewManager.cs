@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Review.API.Entities;
 using Review.API.Exceptions;
 using Review.API.Repositories;
-using Review.API.Services.Model;
 
 namespace Review.API.Services
 {
@@ -36,15 +35,24 @@ namespace Review.API.Services
 
         public async Task<ProductReviewSummary> ProductReviewSummary(int productId)
         {
-            var product = await _productRepository.GetProduct(productId);
-            if (product == null) throw new ProductNotFound(productId);
+            await FailIfProductNotExit(productId);
 
             var reviews = (await _reviewRepository.GetReviews(productId)).ToList();
 
             if (reviews.Count == 0)
+            {
                 return new ProductReviewSummary(productId, 0, 0);
+            }
 
-            return new ProductReviewSummary(productId, (decimal)reviews.Average(x => x.Score), reviews.Count(x => x.Recommend) / (decimal)reviews.Count);
+            return new ProductReviewSummary(productId,
+                                            (decimal)reviews.Average(x => x.Score),
+                                            reviews.Count(x => x.Recommend) / (decimal)reviews.Count);
+        }
+
+        private async Task FailIfProductNotExit(int productId)
+        {
+            var product = await _productRepository.GetProduct(productId);
+            if (product == null) throw new ProductNotFound(productId);
         }
     }
 }

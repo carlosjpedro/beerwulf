@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using AutoFixture;
 using Moq;
+using Review.API.Entities;
 using Review.API.Exceptions;
 using Review.API.Repositories;
 using Review.API.Services;
-using Review.API.Services.Model;
 using Xunit;
 
 namespace Review.API.Tests
